@@ -2,7 +2,6 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-# from agent import Agent, states, TAILLE_MONDE
 import agent
 
 NB_ITER = 1095 # Nombre d'itérations (jours)
