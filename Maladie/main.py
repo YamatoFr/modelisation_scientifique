@@ -1,3 +1,5 @@
+# Modèle de diffusion d'une maladie dans une population d'agents mobile
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -15,3 +17,13 @@ nb_agents = int(input())
 # on le nombre d'infectés initial
 print("Entrez le nombre d'infectés initial : ")
 nb_infectes = int(input())
+
+# boucle principale
+for t in range(NB_ITER):
+    # on initialise les tableaux de population
+    population = np.zeros(nb_agents, dtype=int)
+    population_infectes = np.zeros(nb_agents, dtype=int)
+
+    # on initialise les tableaux de probabilités
+    proba_infection = np.zeros(nb_agents, dtype=float)
+    proba_recovery = np.zeros(nb_agents, dtype=float)
