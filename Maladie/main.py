@@ -1,32 +1,50 @@
 # Modèle de diffusion d'une maladie dans une population d'agents mobile
 
+import os
 import numpy as np
 import matplotlib.pyplot as plt
-import agent
+from agent import Agent, TAILLE_MONDE
+from random import randint
 
-NB_ITER = 1095 # Nombre d'itérations (jours)
-PROB_INF = 0.1 # probabilité d'infection
-PROB_REC = 0.1 # probabilité de guérison
+os.system("cls")
+
+NB_ITER = 600 # Nombre d'itérations (jours)
+
+agents = {} # Dictionnaire des agents
 
 # on entre la population initiale
-print("Entrez la population initiale : ")
-nb_agents = int(input())
+for state in ["healthy", "infected", "immune", "vaccinated"]:
+	print("Enter " + state + " population : ")
+	# les agents sont créés
+	agents[state] = [Agent(state, randint(0, TAILLE_MONDE), randint(0, TAILLE_MONDE)) for i in range(int(input()))]
 
-# les agents sont créés
-agents = [agent.Agent(nb_agents) for i in range(nb_agents)]
-
-# on le nombre d'infectés initial
-print("Entrez le nombre d'infectés initial : ")
-nb_infectes = int(input())
-
-# on infecte les premiers agents
-for i in range(nb_infectes):
-    agents[i].state = agent.states[1]
 
 # boucle principale
 for i in range(NB_ITER):
-    # les agents se déplacent et infectent les autres selon les probabilités définies
-    for agent in agents:
-        agent.deplacement()
-        agent.infecte()
-        agent.gueris()
+	new_agents = {
+		"healthy": [],
+		"infected": [],
+		"immune": [],
+		"vaccinated": []
+	} # dictionnaire des agents après l'itération
+	
+	# les agents se déplacent et infectent les autres selon les probabilités définies
+	for state in ["healthy", "immune", "vaccinated"]:
+		for agent in agents[state]:
+			agent.deplacement()
+			
+			if len(agents["infected"]) and agent.vulnerable() and agent.contact(agents["infected"]):
+				agent.state = "infected"
+				new_agents["infected"].append(agent)
+			else:
+				new_agents[state].append(agent)
+		
+	for agent in agents["infected"]:
+		agent.deplacement()
+		new_agents["infected"].append(agent)
+	
+	agents = new_agents
+	
+# on affiche l'état de la population
+for state in ["healthy", "infected", "immune", "vaccinated"]:
+	print(state + " population : " + str(len(agents[state])))
