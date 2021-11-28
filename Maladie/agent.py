@@ -17,7 +17,9 @@ class Agent:
         self.was_infected = False
         self.last_infection_date = 0
         self.end_infection_date = 0
-        
+        self.immune_end_date = 0
+        self.vaccine_end_date = 0
+        self.was_vaccinated = False
 
     def deplacement(self):
         """L'agent se déplace"""
@@ -50,3 +52,20 @@ class Agent:
                 return True
 
         return False
+
+    def guerison(self, time):
+        """L'agent guérit"""
+        if self.state == "infected":
+            self.end_infection_date = time + self.infection_duration
+            
+        if time - self.infection_date > self.infection_duration:
+            if not self.was_infected:
+                self.was_infected = True
+            
+            self.state = "immune"
+            self.immune_end_date = self.end_infection_date + 180 # durée de l'immunité (environs 6 mois)
+    
+    def vaccin(self, time):
+        """L'agent se vaccine"""
+        if self.state == "healthy" or self.state == "immune":
+            self.vaccine_end_date = time + 180

@@ -41,6 +41,7 @@ while i <= NB_ITER:
 		for agent in agents[state]:
 			agent.deplacement()
 			
+			
 			if len(agents["infected"]) and agent.vulnerable() and agent.contact(agents["infected"]):
 				agent.state = "infected"
 				new_agents["infected"].append(agent)
@@ -50,6 +51,7 @@ while i <= NB_ITER:
 	for agent in agents["infected"]:
 		agent.deplacement()
 		new_agents["infected"].append(agent)
+		agent.guerison(i)
 	
 	agents = new_agents
 
@@ -71,12 +73,12 @@ temps = np.arange(0, NB_ITER, 1)
 plt.plot(temps, healthy_curve, label="Sain", color="blue", linewidth=2, markerfacecolor="blue", markeredgecolor="blue")
 plt.plot(temps, infected_curve, label="Infecté", color="red", linewidth=2, markerfacecolor="red", markeredgecolor="red")
 plt.plot(temps, immune_curve, label="Immunisé", color="green", linewidth=2, markerfacecolor="green", markeredgecolor="green")
-plt.plot(temps, vaccinated_curve, label="Vacciné", color="yellow", linewidth=2, markerfacecolor="yellow", markeredgecolor="yellow")
+plt.plot(temps, vaccinated_curve, label="Vacciné", color="orange", linewidth=2, markerfacecolor="orange", markeredgecolor="orange")
 plt.title("Evolution de la population")
 
 plt.legend()
 plt.xlabel("Time")
 plt.ylabel("Nb. of agents")
-plt.savefig("./Graphs/truc.png")
+plt.savefig("./Images/truc.png")
 # plt.show()
 plt.close()

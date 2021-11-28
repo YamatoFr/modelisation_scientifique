@@ -1,6 +1,11 @@
 []: # Language: markdown
 []: # Path: Maladie\changelog.md
 
+Version: 1.1.1:
+- update agent.py
+  - added guerison method (not working)
+  - added vaccin method (not complete, not working)
+
 Version 1.1.0:
 - added plotting
 - added a bunch of stuff to agent.py
