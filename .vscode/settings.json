@@ -1,6 +1,9 @@
 {
     "python.linting.enabled": false,
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-python.python",
-    "cmake.configureOnOpen": false
+    "editor.defaultFormatter": "GitHub.copilot",
+    "cmake.configureOnOpen": false,
+    "[python]": {
+        "editor.defaultFormatter": "GitHub.copilot"
+    }
 }

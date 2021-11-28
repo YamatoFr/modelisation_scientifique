@@ -1,6 +1,11 @@
 []: # Language: markdown
 []: # Path: Maladie\changelog.md
 
+Version 1.1.0:
+- added plotting
+- added a bunch of stuff to agent.py
+  - will do the rest later
+
 Version 1.0.0:
 - Initial release
 - oveall optimisations
