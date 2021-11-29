@@ -2,10 +2,10 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
-SIZE = 15
+SIZE = 20
 TAUX_INS = 0.2
 TIME = 10000
-DENS = ((SIZE*SIZE)//2) - 20
+DENS = ((SIZE*SIZE)//2) - 20 
 
 def insat(world,i,j):
     u = 0
@@ -58,7 +58,8 @@ while i<DENS:
         i += 1
 
 plt.imshow(world, interpolation='none')
-plt.savefig("./Images/mod1.png")
+plt.title("Répartition de base")
+plt.savefig("./Images/base.png")
 plt.close()
 
 for i in range(TIME):
@@ -74,5 +75,6 @@ for i in range(TIME):
         break
 
 plt.imshow(world, interpolation='none')
-plt.savefig("./Images/mod2.png")
+plt.title("Répartition après " + str(TIME) + " itérations")
+plt.savefig("./Images/fin.png")
 plt.close()
