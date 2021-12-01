@@ -25,10 +25,10 @@ Pour cela nous présenterons le modèle utilisé, les expériences menées et le
 <div style="text-align: justify">
 Pour ce modèle, les paramètres que nous allons utiliser sont les suivants :
 <ul>
-    <li> la durée de la simulation : un maximum de 10 000 itérations sera effectué, la simulation se terminera avant si la population est stable.
-    <li> la taille du monde dans lequel les individus vont se déplacer.
-    <li> le taux d'insatisfaction des individus.
-    <li> la densité de la population.
+    <li> la durée de la simulation.  </li>  
+    <li> la taille du monde dans lequel les individus vont se déplacer. </li>  
+    <li> le seuil de tolérance des individus. </li>  
+    <li> la densité de la population. </li>
 </ul>
 </div>
 
@@ -37,7 +37,7 @@ Pour ce modèle, les paramètres que nous allons utiliser sont les suivants :
 <div style="text-align: justify">
 Les individus sont représentés par des carrés colorés de taille 1x1, les carrés jaunes et violets représentent chacun un "type" d'individu et les carrés turquoises 
 représentent las cases vides. L'insatisfaction des individus est déterminé par leur voisinage, c'est-à-dire les cases adjacentes à l'individu (cela 
-inclut également les diagonales), et le taux d'insatisfaction définis. Ils se déplacent dans un monde dont la taille est définie au début de l'expérience, 
+inclut également les diagonales), et le seuil de tolérance définis. Ils se déplacent dans un monde dont la taille est définie au début de l'expérience, 
 les individus chercheront à se déplacer de façon à être satisfait de leur voisinage.
 </div>
 
@@ -46,5 +46,7 @@ les individus chercheront à se déplacer de façon à être satisfait de leur v
 ## Expériences éffectuées  <a name="experiences-effectuees"></a>  
 
 <div style="text-align: justify">
-
+Comme expliqué précédemment, nous allons faire varier certains paramètres afin d'observer leur impact sur la population. La durée de la simulation est fixée à 10 000 itérations 
+maximum dans le cas où aucune répartition stable n'est obtenue. Les individus évoluront successivement dans un monde de taille 10x10, 20x20 et 50x50, au-delà de cela les temps de calcul seraient
+beaucoup trop longs. 
 </div>

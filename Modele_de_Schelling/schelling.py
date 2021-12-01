@@ -36,17 +36,17 @@ def getOpen(world, size):
     return L
 
 
-def getInsat(world, size, taux_ins):
+def getInsat(world, size, seuil_tol):
     L = []
     for i in range(size):
         for j in range(size):
-            if world[i, j] != 0 and insat(world, i, j, size) > taux_ins:
+            if world[i, j] != 0 and insat(world, i, j, size) > seuil_tol:
                 L.append((i, j))
     return L
 
 
-def main(size, TIME, taux_ins):
-    dens = ((size*size)//2) - 20
+def main(size, TIME, seuil_tol):
+    dens = ((size*size)//2) - 50
     world = np.array([[0]*size]*size)
 
     i = 0
@@ -68,11 +68,11 @@ def main(size, TIME, taux_ins):
     plt.imshow(world, interpolation='none')
     plt.title("Répartition de base")
     plt.savefig("./Images/" + "t" + str(size) + "tins" +
-                str(taux_ins) + "dens" + str(abs(dens - ((size*size)//2))) + ".png")
+                str(seuil_tol) + "dens" + str(abs(dens - ((size*size)//2))) + ".png")
     plt.close()
 
     for i in range(TIME):
-        insatL = list(getInsat(world, size, taux_ins))
+        insatL = list(getInsat(world, size, seuil_tol))
         if len(insatL) > 0:
             x1, y1 = random.choice(insatL)
             x2, y2 = random.choice(getOpen(world, size))
@@ -89,7 +89,7 @@ def main(size, TIME, taux_ins):
     plt.imshow(world, interpolation='none')
     plt.title("Répartition après " + str(i) + " itérations")
     plt.savefig("./Images/" + "t" + str(size) + "tins" +
-                str(taux_ins) + "dens" + str(abs(dens - ((size*size)//2))) + "fin.png")
+                str(seuil_tol) + "dens" + str(abs(dens - ((size*size)//2))) + "fin.png")
     plt.close()
 
 
