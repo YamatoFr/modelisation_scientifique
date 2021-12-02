@@ -78,6 +78,7 @@ et ce peu importe la taille du monde ou la densité de la population.
 |               Fig. 1               |                Fig. 2                 |
 
 <div style="page-break-after: always;"></div>
+&nbsp;
 
 <div style="text-align: center">
 <b>Taille du monde : 20x20 &nbsp;Densité d'une population : 180 individus</b>
