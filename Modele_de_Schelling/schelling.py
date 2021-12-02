@@ -66,11 +66,11 @@ def main(size, TIME, seuil_tol, N):
             world[x, y] = -1
             i += 1
 
-    # plt.imshow(world, interpolation='none')
-    # plt.title("Répartition de base")
-    # plt.savefig("./Images/" + "t" + str(size) + "tins" +
-    #             str(seuil_tol) + "dens" + str(abs(dens - ((size*size)//2))) + ".png")
-    # plt.close()
+    plt.imshow(world, interpolation='none')
+    plt.title("Répartition de base")
+    plt.savefig("./Images/" + "t" + str(size) + "tins" +
+                str(seuil_tol) + "dens" + str(abs(dens - ((size*size)//2))) + ".png")
+    plt.close()
 
     for i in range(TIME):
         insatL = list(getInsat(world, size, seuil_tol))
@@ -88,11 +88,11 @@ def main(size, TIME, seuil_tol, N):
         i += 1
         # print('break', i)
 
-    # plt.imshow(world, interpolation='none')
-    # plt.title("Répartition après " + str(i) + " itérations")
-    # plt.savefig("./Images/" + "t" + str(size) + "tins" +
-    #             str(seuil_tol) + "dens" + str(abs(dens - ((size*size)//2))) + "fin.png")
-    # plt.close()
+    plt.imshow(world, interpolation='none')
+    plt.title("Répartition après " + str(i) + " itérations")
+    plt.savefig("./Images/" + "t" + str(size) + "tins" +
+                str(seuil_tol) + "dens" + str(abs(dens - ((size*size)//2))) + "fin.png")
+    plt.close()
 
 
 # size : taille du tableau
