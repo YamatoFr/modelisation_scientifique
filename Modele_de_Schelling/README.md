@@ -67,7 +67,6 @@ et ce peu importe la taille du monde ou la densité de la population.
 </div>
 
 &nbsp;  
-
 &nbsp;  
 
 <div style="text-align: center">
@@ -87,3 +86,14 @@ et ce peu importe la taille du monde ou la densité de la population.
 | ![](./Images/t20tins0.1dens20.png) | ![](./Images/t20tins0.1dens20fin.png) |
 | :--------------------------------: | :-----------------------------------: |
 |               Fig. 3               |                Fig. 4                 |
+
+&nbsp;
+&nbsp;
+
+<div style="text-align: center">
+<b>Taille du monde : 50x50 &nbsp;Densité d'une population : 1200 individus</b>
+</div>
+
+| ![](./Images/t50tins0.1dens50.png) | ![](./Images/t50tins0.1dens50fin.png) |
+| :--------------------------------: | :-----------------------------------: |
+|               Fig. 5               |                Fig. 6                 |
