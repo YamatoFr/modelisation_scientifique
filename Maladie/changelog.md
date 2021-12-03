@@ -1,6 +1,10 @@
 []: # Language: markdown
 []: # Path: Maladie\changelog.md
 
+Version: 2.0.0:
+- gave up python, switched to NetLogo
+- writing report
+
 Version: 1.1.1:
 - update agent.py
   - added guerison method (not working)

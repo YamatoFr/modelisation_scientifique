@@ -1,4 +1,9 @@
-<center><h1> Modèle de Schelling </h1></center>
+<h1 align="center"> Modèle de Schelling </h1>
+
+<center>FIGINI Théo</center>
+<center>30 NOVEMBRE 2021</center>
+
+&nbsp;
 
 ## Sommaire
 1. [Introduction](#introduction)  
@@ -44,8 +49,6 @@ représentent las cases vides. L'insatisfaction des individus est déterminé pa
 inclut également les diagonales), et le seuil de tolérance définis. Ils se déplacent dans un monde dont la taille est définie au début de l'expérience, 
 les individus chercheront à se déplacer de façon à être satisfait de leur voisinage. L'instatisfaction d'un individu est calculé à l'aide de la fonction suivante :
 </div>
-
-<div style="page-break-after: always;"></div>
 
 ```{python}
 def insat(world, i, j, size):
