@@ -432,5 +432,6 @@ Grâce à nos simulations, nous pouvons affirmer que le facteur le plus détermi
 En effet, nous remarquons que plus ce seuil est bas plus les individus exprime le besoin de former des groupes avec des individus similaires, à l'inverse, plus ce seuil est 
 élevé plus les individus et moins les individus exprime le besoin de se déplacer, ce qui donne lieu à une répartion plus chaotique. Nous avons pu noter que lorsque la taille 
 du monde augmente, la densité des populations devient un paramètre important car plus les populations comptent d'individus, plus il est nécessaire de définir une tolérance 
-élevée afin d'atteindre un répartion stable. Ces données nous permettent de conclure que la taille du monde impacte peu la répartion mais joue toujours un rôle dans l'étude.
+élevée afin d'atteindre un répartion stable. Ces données nous permettent de conclure que la taille du monde impacte peu la répartion mais joue toujours un rôle dans l'étude.  
+Vous pourrez trouver le code source de notre simulation sur notre Github.
 </div>
